@@ -1,0 +1,17 @@
+-------------------------------------------------------------------------------
+Test set: testscripts.scenario1.TC_1
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 45.191 s <<< FAILURE! - in testscripts.scenario1.TC_1
+testscripts.scenario1.TC_1.runTC4  Time elapsed: 41.397 s  <<< FAILURE!
+java.lang.AssertionError: 
+Expected condition failed: waiting for visibility of element located by By.id: login-error-header (tried for 20 second(s) with 500 milliseconds interval) <b>Caused by: </b>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#login\-error\-header"}
+  (Session info: chrome=117.0.5938.63)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'dvtcsdevp-001', ip: '172.26.120.16', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.63, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: C:\Users\KRISHRO\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54803}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e1534dcf97cbae147cab7224e33ed88c
+*** Element info: {Using=id, value=login-error-header}
+	at testscripts.scenario1.TC_1.runTC4(TC_1.java:27)
+

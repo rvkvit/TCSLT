@@ -1,0 +1,6 @@
+testscripts\scenario1\TC_2.class
+allocator\Allocator.class
+testscripts\scenario1\TC_1.class
+allocator\ParallelRunner.class
+testscripts\scenario1\TC_3.class
+testscripts\scenario1\TC_4.class
