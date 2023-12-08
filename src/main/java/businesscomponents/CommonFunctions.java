@@ -171,18 +171,9 @@ public class CommonFunctions extends ReusableLibrary
 
 	}
 	public void enterValues(By identifer,String strName, String strValue){
-		//Thread.sleep(2000);
 		By strA = identifer;
-
 		try{
-			/*try{
-				wait1.until(ExpectedConditions.stalenessOf(driver.findElement(strA)));
-			}
-			catch(Exception e){
-
-			}*/
-
-			//wait.until(ExpectedConditions.presenceOfElementLocated(strA));
+			
 			WebElement webElement= driver.findElement(strA);
 			if(webElement.isDisplayed()){
 				webElement.clear();
@@ -196,22 +187,11 @@ public class CommonFunctions extends ReusableLibrary
 	}
 
 	public void selectValueFromDropDown(By identifer,String strDropDownName, String strValue) {
-
-		//Thread.sleep(2000);
 		By strA = identifer;
 
 		try{
-			/*try{
-				wait1.until(ExpectedConditions.stalenessOf(driver.findElement(strA)));
-			}
-			catch(Exception e){
-
-			}
-			 */
-			//wait.until(ExpectedConditions.visibilityOfElementLocated(strA));
+			
 			WebElement webElement= driver.findElement(strA);
-			// 							_FOpt1:_FOr1:0:_FOSritemNode_my_information_expenses:0:MAnt2:1:AP1:ExpenseTypeId
-
 			if(webElement.isDisplayed()){
 
 				Select dropDownOption = new Select(webElement); 
@@ -220,25 +200,14 @@ public class CommonFunctions extends ReusableLibrary
 			}
 		}
 		catch(Exception e){
-			// return true;
-			//report.updateTestLog("Verify element:", strDropDownName +": is not displayed", Status.FAIL);
+			
 		}
-		/*Select paymentMethod = new Select(drpDwn_PaymentMethod);
-		paymentMethod.selectByVisibleText(strPaymentMethod);*/
+		
 	}
 
 
 	public void performTab(By identifer, int intCount) {
-		//Thread.sleep(2000);
 		By strA = identifer;
-
-		/*try{
-			wait1.until(ExpectedConditions.stalenessOf(driver.findElement(strA)));
-		}
-		catch(Exception e){
-
-		}*/
-		//wait.until(ExpectedConditions.presenceOfElementLocated(strA));
 		WebElement webElement= driver.findElement(strA);
 		if(webElement.isDisplayed()){
 			for(int i=1; i<= intCount; i++){
@@ -249,24 +218,19 @@ public class CommonFunctions extends ReusableLibrary
 	}
 
 	public String getValue(By identifer, int beginIndex, int endIndex) {
-
-
-		//Thread.sleep(2000);
 		By strA = identifer;
 		String value = null;
 		String getValue;
 		WebElement webElement= driver.findElement(strA);
 		if(webElement.isDisplayed()){
 			getValue = webElement.getText();
-			value = getValue.substring(beginIndex, endIndex); // 0// 18 // retrun : 
+			value = getValue.substring(beginIndex, endIndex); 
 
 		}
 		return value;
 	}
 
 	public String getText(By identifer) {
-		//Thread.sleep(2000);
-
 		By strA = identifer;
 		String getValue = null;
 		wait1.until(ExpectedConditions.visibilityOfElementLocated(strA));
@@ -278,14 +242,11 @@ public class CommonFunctions extends ReusableLibrary
 	}
 
 	public void takeScreenshot() {
-		//Thread.sleep(2000);
 		report.updateTestLog("Take Screenshot", "Screenshot taken", Status.SCREENSHOT);
 
 	}
 
 	public String getAttribute(By identifer, String strAttrType) {
-		//Thread.sleep(2000);
-
 		By strA = identifer;
 		String getValue = null;
 		WebElement webElement= driver.findElement(strA);
@@ -305,19 +266,16 @@ public class CommonFunctions extends ReusableLibrary
 		Actions actObj=new Actions(driver);
 		actObj.moveToElement(we).build().perform();
 	}
-	
-	public static void scrollToElementAndClick(WebDriver driver, WebElement element) {
-        // Scroll to the element using JavaScript
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 
-        // Click on the element
-        element.click();
-    }
+	public static void scrollToElementAndClick(WebDriver driver, WebElement element) {
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+		element.click();
+	}
 
 	/*
 	 * Scenario � While reporting your script status, you need to pass time & date that when your 
 	 * test-script has finished. Another scenario: If you need unique username every time, you can 
-	 * append the timestamp with any constant string  (e.g SumitMay28201513_15_10 PM), so here you are:
+	 * append the timestamp with any constant string  (e.g XYZ_May28201513_15_10 PM), so here you are:
 	 */
 
 	public static String fn_GetTimeStamp(){
@@ -329,21 +287,7 @@ public class CommonFunctions extends ReusableLibrary
 		return DateValue;
 	}
 
-	/**
-	 * @param driver
-	 *            WebDriver reference
-	 * @param timeOutInSeconds
-	 *            integer type waiting time in second after that time out of
-	 *            waiting
-	 * @param FindElementBy
-	 *            String type expression of finding the element using :
-	 *            xpath/ID/CSS path
-	 * @return boolean Status of WebDriver element i.e. found or not
-	 * @param Expr
-	 *            String type expression of xpath/ID/CSS path
-	 * @throws TimeoutException
-	 *             if time out exception occurred
-	 */
+	
 	public boolean commonWaitToFindElement(WebDriver driver,
 			int timeOutInSeconds, String findElementBy, By Expr)
 					throws TimeoutException {
