@@ -100,9 +100,12 @@
                 <version>3.0.0-M5</version>
                 <configuration>
                     <!-- Specify test classes location -->
-                    <includes>
-                        <include>**/*TC_1.java</include>
-                    </includes>
+                   <!-- <includes>
+                        <include>**/*TC_*.java</include>
+                    </includes>-->
+                    <suiteXmlFiles>
+                    	<suiteXmlFile>testng_regression.xml</suiteXmlFile>
+                	</suiteXmlFiles>
                     <!-- Additional configuration options if needed -->
                 </configuration>
             </plugin>
