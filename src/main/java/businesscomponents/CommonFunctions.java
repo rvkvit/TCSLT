@@ -1,19 +1,23 @@
 package businesscomponents;
 
 import java.text.DateFormat;
+import java.time.Duration;
 import java.util.Date;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Condition;
 
 import org.apache.bcel.generic.RETURN;
+import org.apache.hc.core5.util.Timeout;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
@@ -48,14 +52,9 @@ public class CommonFunctions extends ReusableLibrary
 
 		driverUtil = new WebDriverUtil(driver);
 	}
-	WebDriverWait wait = new WebDriverWait(driver, 10);
-	WebDriverWait wait1 = new WebDriverWait(driver, 20);
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofMinutes(1));
+	WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofMinutes(2));	
 
-	//declaring fluent wait with time out of 30 seconds and frequency is set to 5 seconds  		
-	Wait<WebDriver> wait2 = new FluentWait<WebDriver>(driver)							
-			.withTimeout(60, TimeUnit.SECONDS) 			
-			.pollingEvery(5, TimeUnit.SECONDS) 			
-			.ignoring(NoSuchElementException.class);	
 
 	public void clickOnElement(By identifer, String strElementName, String strElementType) {
 
@@ -75,37 +74,25 @@ public class CommonFunctions extends ReusableLibrary
 
 	}
 
-	public void dependableClick( By identifer , String strElementName, String strElementType)
-	{
-		WebDriver d = null;
-		final int MAXIMUM_WAIT_TIME = 10;
-		final int MAX_STALE_ELEMENT_RETRIES = 5;
+	public void verifyElement(By identifer, String strElementName, String strElementType) {
+
 		By strA = identifer;
-
-		WebDriverWait wait = new WebDriverWait(d, MAXIMUM_WAIT_TIME);
-		int retries = 0;
-		while (true)
-		{
-			try
-			{
-				wait.until(ExpectedConditions.elementToBeClickable(strA)).click();
-
-				return;
-			}
-			catch (StaleElementReferenceException e)
-			{
-				if (retries < MAX_STALE_ELEMENT_RETRIES)
-				{
-					retries++;
-					continue;
-				}
-				else
-				{
-					throw e;
-				}
+		try{
+			// wait condition check
+			wait1.until(ExpectedConditions.visibilityOfElementLocated(strA));
+			WebElement webElement= driver.findElement(strA);
+			if(webElement.isDisplayed()){
+				report.updateTestLog("Click on "+ strElementName ,  strElementName +" "+ strElementType+" is clicked successfully", Status.DONE);
 			}
 		}
+		catch(Exception e){
+			report.updateTestLog("Verify element:", strElementName +": is not displayed", Status.FAIL);
+		}
+
 	}
+
+
+
 
 	public void enterValuesInTextBox(By identifer,String strTextBoxName, String strValue) {
 		//Thread.sleep(2000);
@@ -173,7 +160,7 @@ public class CommonFunctions extends ReusableLibrary
 	public void enterValues(By identifer,String strName, String strValue){
 		By strA = identifer;
 		try{
-			
+
 			WebElement webElement= driver.findElement(strA);
 			if(webElement.isDisplayed()){
 				webElement.clear();
@@ -190,7 +177,7 @@ public class CommonFunctions extends ReusableLibrary
 		By strA = identifer;
 
 		try{
-			
+
 			WebElement webElement= driver.findElement(strA);
 			if(webElement.isDisplayed()){
 
@@ -200,9 +187,9 @@ public class CommonFunctions extends ReusableLibrary
 			}
 		}
 		catch(Exception e){
-			
+
 		}
-		
+
 	}
 
 
@@ -256,7 +243,88 @@ public class CommonFunctions extends ReusableLibrary
 		return getValue;
 	}
 
+	/*
+	 * Shadow Elements
+	 */
 
+	public void verifyShadowElement(By ShadowHost, By ShadowRoot,  String strElementName, String strElementType) {
+
+		try{
+			wait1.until(ExpectedConditions.visibilityOfElementLocated(ShadowHost));
+			WebElement shadowHost = driver.findElement(ShadowHost);
+			SearchContext shadowRoot = shadowHost.getShadowRoot();
+			WebElement shadowContent = shadowRoot.findElement(ShadowRoot);
+
+			if(shadowContent.isDisplayed()){
+				report.updateTestLog("Click on "+ strElementName ,  strElementName +" "+ strElementType+" is displayed successfully", Status.DONE);
+			}
+		}
+		catch(Exception e){
+			report.updateTestLog("Verify element:", strElementName +": is not displayed", Status.FAIL);
+		}
+
+	}
+
+	public void clickOnShadowElement(By ShadowHost, By ShadowRoot,  String strElementName, String strElementType) {
+
+		try{
+			wait1.until(ExpectedConditions.visibilityOfElementLocated(ShadowHost));
+			WebElement shadowHost = driver.findElement(ShadowHost);
+			SearchContext shadowRoot = shadowHost.getShadowRoot();
+			WebElement shadowContent = shadowRoot.findElement(ShadowRoot);
+
+			if(shadowContent.isDisplayed()){
+				shadowContent.click();
+				report.updateTestLog("Click on "+ strElementName ,  strElementName +" "+ strElementType+" is clicked successfully", Status.DONE);
+			}
+		}
+		catch(Exception e){
+			report.updateTestLog("Verify element:", strElementName +": is not displayed", Status.FAIL);
+		}
+
+	}
+	
+	public void clickOnShadowElementWithScrollView(By ShadowHost, By ShadowRoot,  String strElementName, String strElementType) {
+
+		try{
+			wait1.until(ExpectedConditions.visibilityOfElementLocated(ShadowHost));
+			WebElement shadowHost = driver.findElement(ShadowHost);
+			SearchContext shadowRoot = shadowHost.getShadowRoot();
+			WebElement shadowContent = shadowRoot.findElement(ShadowRoot);
+
+			if(shadowContent.isDisplayed()){
+				((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", shadowContent);
+				shadowContent.click();
+				report.updateTestLog("Click on "+ strElementName ,  strElementName +" "+ strElementType+" is clicked successfully", Status.DONE);
+			}
+		}
+		catch(Exception e){
+			report.updateTestLog("Verify element:", strElementName +": is not displayed", Status.FAIL);
+		}
+
+	}
+
+	public void clickOnNestedShadowElement(By ShadowHost, By ShadowRoot1,  By ShadowRoot2, String strElementName, String strElementType) {
+
+		try{
+			
+			wait1.until(ExpectedConditions.visibilityOfElementLocated(ShadowHost));
+			WebElement shadowHost = driver.findElement(ShadowHost);
+			SearchContext shadowRoot = shadowHost.getShadowRoot();
+			WebElement shadowContent = shadowRoot.findElement(ShadowRoot1);
+			SearchContext shadowRootTwo = shadowContent.getShadowRoot ();
+			WebElement shadowContent1 = shadowRootTwo.findElement(ShadowRoot2);
+
+			if(shadowContent1.isDisplayed()){
+				shadowContent1.click();
+				report.updateTestLog("Click on "+ strElementName ,  strElementName +" "+ strElementType+" is clicked successfully", Status.DONE);
+			}
+		}
+		catch(Exception e){
+			report.updateTestLog("Verify element:", strElementName +": is not displayed", Status.FAIL);
+		}
+
+	}
 
 	/*
 	 * incase, we need to click on a sub-menu that is visible only when users do mouse-hover on the main-menu, then we can do it using this function. Just pass web element position to this function.
@@ -287,40 +355,7 @@ public class CommonFunctions extends ReusableLibrary
 		return DateValue;
 	}
 
-	
-	public boolean commonWaitToFindElement(WebDriver driver,
-			int timeOutInSeconds, String findElementBy, By Expr)
-					throws TimeoutException {
-		boolean result = false;
-		WebElement element = null;
-		try {
-			// Element is Click able - it is Displayed and Enabled.
-			WebDriverWait wait = new WebDriverWait(driver, timeOutInSeconds);
 
-			// TODO - Use Switch case, move to Java 1.7
-			if (findElementBy.equals("xpath")) {
-				element = wait.until(ExpectedConditions.elementToBeClickable(Expr));
-			} else if (findElementBy.equals("id")) {
-				element = wait.until(ExpectedConditions.elementToBeClickable(Expr));
-			} else if (findElementBy.equals("cssSelector")) {
-				element = wait.until(ExpectedConditions.elementToBeClickable(Expr));
-			} else if (findElementBy.equals("className")) {
-				element = wait.until(ExpectedConditions.elementToBeClickable(Expr));
-			} else if (findElementBy.equals("linkText")) {
-				element = wait.until(ExpectedConditions.elementToBeClickable(Expr));
-			}
 
-			if (element != null) {
-				result = true;
-			} else {
-				result = false;
-			}
-		} catch (TimeoutException e) {
-			report.updateTestLog("Verify timeout reason for the element",  "TimeoutException in commonWaitToFindElement for :"
-					+ e.getMessage(), Status.FAIL);
-
-		}
-		return result;
-	}
 
 }

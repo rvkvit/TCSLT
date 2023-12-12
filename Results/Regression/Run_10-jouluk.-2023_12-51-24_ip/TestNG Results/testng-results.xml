@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-12-10T12:22:44 IST" name="Regression" finished-at="2023-12-10T12:23:34 IST" duration-ms="49585">
+    <groups>
+    </groups>
+    <test started-at="2023-12-10T12:22:44 IST" name="Test" finished-at="2023-12-10T12:23:34 IST" duration-ms="49585">
+      <class name="testscripts.scenario1.TC_1">
+        <test-method is-config="true" signature="suiteSetup(org.testng.ITestContext)[pri:0, instance:testscripts.scenario1.TC_1@38cee291]" started-at="2023-12-10T12:22:42 IST" name="suiteSetup" finished-at="2023-12-10T12:22:44 IST" duration-ms="1922" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@51650883]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- suiteSetup -->
+        <test-method is-config="true" signature="testMethodSetup()[pri:0, instance:testscripts.scenario1.TC_1@38cee291]" started-at="2023-12-10T12:22:44 IST" name="testMethodSetup" finished-at="2023-12-10T12:22:44 IST" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMethodSetup -->
+        <test-method signature="runTC1(java.lang.String)[pri:0, instance:testscripts.scenario1.TC_1@38cee291]" started-at="2023-12-10T12:22:44 IST" name="runTC1" finished-at="2023-12-10T12:23:34 IST" duration-ms="49481" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[edge]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.InvalidArgumentException">
+            <message>
+              <![CDATA[invalid argument: entry 0 of 'firstMatch' is invalid
+from invalid argument: cannot parse capability: ms:edgeOptions
+from invalid argument: must be a dictionary
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'dvtcsdevp-001', ip: '172.26.120.16', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.9'
+Driver info: driver.version: EdgeDriver
+remote stacktrace: GetHandleVerifier [0x00007FF7F6CB25A2+60402]
+Microsoft::Applications::Events::ILogConfiguration::operator* [0x00007FF7F6C372F2+253618]
+(No symbol) [0x00007FF7F6A09C99]
+(No symbol) [0x00007FF7F6A33930]
+(No symbol) [0x00007FF7F6A3C1C8]
+(No symbol) [0x00007FF7F69F27B9]
+(No symbol) [0x00007FF7F6A2FFD6]
+(No symbol) [0x00007FF7F6A8267E]
+(No symbol) [0x00007FF7F6A81D41]
+(No symbol) [0x00007FF7F6A8361A]
+(No symbol) [0x00007FF7F6A7B863]
+(No symbol) [0x00007FF7F6A4C585]
+(No symbol) [0x00007FF7F6A4B993]
+(No symbol) [0x00007FF7F6A4CD14]
+Microsoft::Applications::Events::EventProperty::to_string [0x00007FF7F6E93444+1161924]
+(No symbol) [0x00007FF7F6ACE5F6]
+Microsoft::Applications::Events::EventProperty::~EventProperty [0x00007FF7F6B8B083+37459]
+Microsoft::Applications::Events::EventProperty::~EventProperty [0x00007FF7F6B82C4D+3613]
+Microsoft::Applications::Events::EventProperty::to_string [0x00007FF7F6E92184+1157124]
+Microsoft::Applications::Events::ILogConfiguration::operator* [0x00007FF7F6C41648+295432]
+Microsoft::Applications::Events::ILogConfiguration::operator* [0x00007FF7F6C3CB14+276180]
+Microsoft::Applications::Events::ILogConfiguration::operator* [0x00007FF7F6C3CC42+276482]
+Microsoft::Applications::Events::ILogConfiguration::operator* [0x00007FF7F6C2FA31+222705]
+BaseThreadInitThunk [0x00007FFD3E507344+20]
+RtlUserThreadStart [0x00007FFD3FC426B1+33]
+]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.InvalidArgumentException: invalid argument: entry 0 of 'firstMatch' is invalid
+from invalid argument: cannot parse capability: ms:edgeOptions
+from invalid argument: must be a dictionary
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'dvtcsdevp-001', ip: '172.26.120.16', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.9'
+Driver info: driver.version: EdgeDriver
+remote stacktrace: GetHandleVerifier [0x00007FF7F6CB25A2+60402]
+Microsoft::Applications::Events::ILogConfiguration::operator* [0x00007FF7F6C372F2+253618]
+(No symbol) [0x00007FF7F6A09C99]
+(No symbol) [0x00007FF7F6A33930]
+(No symbol) [0x00007FF7F6A3C1C8]
+(No symbol) [0x00007FF7F69F27B9]
+(No symbol) [0x00007FF7F6A2FFD6]
+(No symbol) [0x00007FF7F6A8267E]
+(No symbol) [0x00007FF7F6A81D41]
+(No symbol) [0x00007FF7F6A8361A]
+(No symbol) [0x00007FF7F6A7B863]
+(No symbol) [0x00007FF7F6A4C585]
+(No symbol) [0x00007FF7F6A4B993]
+(No symbol) [0x00007FF7F6A4CD14]
+Microsoft::Applications::Events::EventProperty::to_string [0x00007FF7F6E93444+1161924]
+(No symbol) [0x00007FF7F6ACE5F6]
+Microsoft::Applications::Events::EventProperty::~EventProperty [0x00007FF7F6B8B083+37459]
+Microsoft::Applications::Events::EventProperty::~EventProperty [0x00007FF7F6B82C4D+3613]
+Microsoft::Applications::Events::EventProperty::to_string [0x00007FF7F6E92184+1157124]
+Microsoft::Applications::Events::ILogConfiguration::operator* [0x00007FF7F6C41648+295432]
+Microsoft::Applications::Events::ILogConfiguration::operator* [0x00007FF7F6C3CB14+276180]
+Microsoft::Applications::Events::ILogConfiguration::operator* [0x00007FF7F6C3CC42+276482]
+Microsoft::Applications::Events::ILogConfiguration::operator* [0x00007FF7F6C2FA31+222705]
+BaseThreadInitThunk [0x00007FFD3E507344+20]
+RtlUserThreadStart [0x00007FFD3FC426B1+33]
+
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$errorHandler$0(W3CHandshakeResponse.java:62)
+at org.openqa.selenium.remote.HandshakeResponse.lambda$getResponseFunction$0(HandshakeResponse.java:30)
+at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$0(ProtocolHandshake.java:126)
+at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+at java.base/java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:1002)
+at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:129)
+at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:527)
+at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:513)
+at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
+at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:647)
+at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:128)
+at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
+at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:131)
+at org.openqa.selenium.edge.EdgeDriver.<init>(EdgeDriver.java:141)
+at org.openqa.selenium.edge.EdgeDriver.<init>(EdgeDriver.java:130)
+at com.LT.framework.selenium.WebDriverFactory.getDriver(WebDriverFactory.java:100)
+at supportlibraries.DriverScript.initializeWebDriver(DriverScript.java:184)
+at supportlibraries.DriverScript.driveTestExecution(DriverScript.java:96)
+at testscripts.scenario1.TC_1.runTC1(TC_1.java:37)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:840)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.InvalidArgumentException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runTC1 -->
+        <test-method is-config="true" signature="testMethodTearDown()[pri:0, instance:testscripts.scenario1.TC_1@38cee291]" started-at="2023-12-10T12:23:34 IST" name="testMethodTearDown" finished-at="2023-12-10T12:23:34 IST" duration-ms="2" status="FAIL">
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "String.equalsIgnoreCase(String)" because "testStatus" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "String.equalsIgnoreCase(String)" because "testStatus" is null
+at com.LT.framework.Report.updateResultSummary(Report.java:242)
+at com.LT.framework.selenium.ResultSummaryManager.updateResultSummary(ResultSummaryManager.java:108)
+at supportlibraries.TestCase.testMethodTearDown(TestCase.java:93)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:390)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:325)
+at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:810)
+at org.testng.internal.invokers.TestInvoker.runAfterConfigurations(TestInvoker.java:779)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:755)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:840)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMethodTearDown -->
+        <test-method is-config="true" signature="suiteTearDown()[pri:0, instance:testscripts.scenario1.TC_1@38cee291]" started-at="2023-12-10T12:23:34 IST" name="suiteTearDown" finished-at="2023-12-10T12:23:34 IST" duration-ms="852" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- suiteTearDown -->
+      </class> <!-- testscripts.scenario1.TC_1 -->
+    </test> <!-- Test -->
+  </suite> <!-- Regression -->
+</testng-results>

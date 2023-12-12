@@ -1,5 +1,6 @@
 package pages;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -31,7 +32,7 @@ public class LT_NordeaBankPortalSignIn_Page extends MasterPage{
 	By NordeaUserID_TextBox = By.id("demo-mock-user-id");
 	By OK_Button = By.id("auth-button");
 
-	WebDriverWait wait = new WebDriverWait(driver, 10);
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofMinutes(1));
 
 	public LT_NordeaBankPortalSignIn_Page LoginToNordeaPortal() throws InterruptedException{
 		

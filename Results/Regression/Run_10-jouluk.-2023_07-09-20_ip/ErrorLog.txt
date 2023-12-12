@@ -1,0 +1,27 @@
+1702215562830	geckodriver	INFO	Listening on 127.0.0.1:46844
+1702215563073	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\KRISHRO\\AppData\\Local\\Temp\\rust_mozprofileGsneIp"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1702215563793	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1702215563909	Marionette	INFO	Listening on port 55888
+Read port: 55888
+1702215564229	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+jouluk. 10, 2023 7:09:25 IP. org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+JavaScript warning: https://assets.adobedtm.com/launch-ENa11e8a47987a44a194153d59bbb6d974-development.min.js, line 7: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://sit-login.lahitapiola.fi."
+1702215571799	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://identify.nordea.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://identify.nordea.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://lahitapiola.sandbox.signicat.com."
+console.error: ({})
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://sit-login.lahitapiola.fi."
+JavaScript warning: https://assets.adobedtm.com/launch-ENa11e8a47987a44a194153d59bbb6d974-development.min.js, line 7: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1702215579487	Marionette	INFO	Stopped listening on port 55888
+JavaScript warning: https://sit2aksasiointi.lahitapiola.fi/default/polyfills.1d60ec6b3d2366d0.js, line 1: Script terminated by timeout at:
+10609/u/ce.invokeTask@https://sit2aksasiointi.lahitapiola.fi/default/polyfills.1d60ec6b3d2366d0.js:1:9664
+10609/u/ce/this.invoke<@https://sit2aksasiointi.lahitapiola.fi/default/polyfills.1d60ec6b3d2366d0.js:1:9608
+10609/u/Vn/fe/ge.args[0]@https://sit2aksasiointi.lahitapiola.fi/default/polyfills.1d60ec6b3d2366d0.js:1:42458
+
+Dynamically enable window occlusion 1

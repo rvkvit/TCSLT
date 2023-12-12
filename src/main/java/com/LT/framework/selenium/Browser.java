@@ -1,7 +1,7 @@
 package com.LT.framework.selenium;
 
 public enum Browser {
-	Chrome, Firefox, HtmlUnit, InternetExplorer, Opera, Safari;
+	Chrome, Firefox, HtmlUnit, InternetExplorer, Opera, Safari, Edge;
 
 	private String value;
 

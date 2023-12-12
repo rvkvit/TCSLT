@@ -178,7 +178,7 @@ public class DriverScript
 	private void initializeWebDriver()
 	{
 		executionMode = ExecutionMode.valueOf(properties.getProperty("ExecutionMode"));
-		System.setProperty("webdriver.gecko.driver", "C:\\Browser Drivers\\geckodriver.exe");
+		System.setProperty("webdriver.gecko.driver", "C:\\Users\\KRISHRO\\Desktop\\driver\\geckodriver.exe");
 		switch(executionMode) {
 		case Local:
 			driver = WebDriverFactory.getDriver(testParameters.getBrowser());

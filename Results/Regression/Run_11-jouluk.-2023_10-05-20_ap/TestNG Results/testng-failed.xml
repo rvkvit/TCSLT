@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="4" parallel="classes" name="Failed suite [Regression]" guice-stage="DEVELOPMENT">
+  <test thread-count="4" parallel="classes" name="Test(failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="testscripts.scenario1.TC_1">
+        <methods>
+          <include name="suiteSetup"/>
+          <include name="suiteTearDown"/>
+          <include name="testMethodTearDown"/>
+          <include name="runTC1" invocation-numbers="0"/>
+          <include name="testMethodSetup"/>
+        </methods>
+      </class> <!-- testscripts.scenario1.TC_1 -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Regression] -->

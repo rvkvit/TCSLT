@@ -1,11 +1,16 @@
 package businesscomponents;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.LT.framework.selenium.WebDriverUtil;
 
 import pages.LT_BankPortal_Page;
+import pages.LT_FilingAClaim_Page;
+import pages.LT_Home_Page;
 import pages.LT_NordeaBankPortalSignIn_Page;
 import pages.LT_ReleaseFlagSelection_Page;
 import pages.LT_SSN_Page;
@@ -32,7 +37,7 @@ public class FunctionalComponents extends ReusableLibrary
 		super(scriptHelper);
 		driverUtil = new WebDriverUtil(driver);
 	}
-	WebDriverWait wait = new WebDriverWait(driver, 30);
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofMinutes(1));
 	public String errorMessage;
 	public String strMessage;
 	public String strCode;
@@ -40,6 +45,8 @@ public class FunctionalComponents extends ReusableLibrary
 	public String strBatchName;
 	public String InvoiceNum;
 
+	//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	
 
 
 	public void invokeApplication()
@@ -81,10 +88,13 @@ public class FunctionalComponents extends ReusableLibrary
 
 
 	public void selectReleaseFlag() throws InterruptedException
-	{
+	{	
+		//driver.findElement(By.id("onetrust-accept-btn-handler")).click();
+		
 		LT_ReleaseFlagSelection_Page RF = new LT_ReleaseFlagSelection_Page(scriptHelper);
 		RF.SelectReleaseFlag();
 		RF.SaveSelection();
+		
 
 
 
@@ -100,6 +110,32 @@ public class FunctionalComponents extends ReusableLibrary
 		SP.EnterSSNonLT();
 		
 	}
+	
+	public void verifyHomePageAndAccessCompensationAndDamageMatters() throws InterruptedException {
+		
+		LT_Home_Page HP = new LT_Home_Page(scriptHelper);
+		HP.VerifyHomePage();
+		try{
+			wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.id("onetrust-accept-btn-handler"))));
+			driver.findElement(By.id("onetrust-accept-btn-handler")).click();
+			
+		}
+		catch(Exception e) {
+			System.out.println("");
+		}
+		HP.clickOnSpecificTabAvailableOnHomePage("Compensation and Damage Matters");
+		
+	}
+	
+	public void fillAClaim() throws InterruptedException {
+		LT_FilingAClaim_Page FC = new LT_FilingAClaim_Page(scriptHelper);
+		FC.ClickOnApplyForCompensation();
+		FC.SelectDamageTypeAndMoveNext();
+		FC.SelectTimeOfTheInjuryAndMoveNext("The damage was done");
+		FC.SelectVechileTypeAndMoveNext("ABC-123");
+	}
+	
+	
 	
 	public void loginError() {
 		try {

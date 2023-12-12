@@ -1,0 +1,7 @@
+Starting Microsoft Edge WebDriver 120.0.2210.61 (50ab4bd76cf1b5ff9d6705778b6ee170df56f154) on port 22097
+To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver
+
+Only local connections are allowed.
+Please see https://aka.ms/WebDriverSecurity for suggestions on keeping Microsoft Edge WebDriver safe.
+
+Microsoft Edge WebDriver was started successfully.

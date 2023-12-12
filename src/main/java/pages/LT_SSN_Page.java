@@ -1,5 +1,6 @@
 package pages;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -31,7 +32,7 @@ public class LT_SSN_Page extends MasterPage{
 	By SSN_TextBox = By.id("ssn");
 	By Continue_Button = By.id("continue");
 
-	WebDriverWait wait = new WebDriverWait(driver, 10);
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofMinutes(1));
 
 	public LT_SSN_Page EnterSSNonLT() throws InterruptedException{
 		

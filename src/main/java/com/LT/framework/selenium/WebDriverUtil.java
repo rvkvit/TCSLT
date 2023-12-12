@@ -1,6 +1,7 @@
 package com.LT.framework.selenium;
 
 
+import java.time.Duration;
 import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
@@ -25,19 +26,19 @@ public class WebDriverUtil {
 		}
 	}
 
-	public void waitUntilElementLocated(By by, long timeOutInSeconds) {
+	public void waitUntilElementLocated(By by, Duration timeOutInSeconds) {
 		new WebDriverWait(this.driver, timeOutInSeconds).until(ExpectedConditions.presenceOfElementLocated(by));
 	}
 
-	public void waitUntilElementVisible(By by, long timeOutInSeconds) {
+	public void waitUntilElementVisible(By by, Duration timeOutInSeconds) {
 		new WebDriverWait(this.driver, timeOutInSeconds).until(ExpectedConditions.visibilityOfElementLocated(by));
 	}
 
-	public void waitUntilElementEnabled(By by, long timeOutInSeconds) {
+	public void waitUntilElementEnabled(By by, Duration timeOutInSeconds) {
 		new WebDriverWait(this.driver, timeOutInSeconds).until(ExpectedConditions.elementToBeClickable(by));
 	}
 
-	public void waitUntilElementDisabled(By by, long timeOutInSeconds) {
+	public void waitUntilElementDisabled(By by, Duration timeOutInSeconds) {
 		new WebDriverWait(this.driver, timeOutInSeconds)
 				.until(ExpectedConditions.not(ExpectedConditions.elementToBeClickable(by)));
 	}
@@ -61,7 +62,7 @@ public class WebDriverUtil {
 		return Boolean.valueOf(false);
 	}
 
-	public Boolean isAlertPresent(long timeOutInSeconds) {
+	public Boolean isAlertPresent(Duration timeOutInSeconds) {
 		try {
 			new WebDriverWait(this.driver, timeOutInSeconds).until(ExpectedConditions.alertIsPresent());
 			return Boolean.valueOf(true);

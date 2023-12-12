@@ -1,0 +1,9 @@
+Starting Microsoft Edge WebDriver 119.0.2151.97 (42f50dec8b7a97d2cd39634128418ccfb4ef77b8) on port 39954
+To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver
+
+Only local connections are allowed.
+Please see https://aka.ms/WebDriverSecurity for suggestions on keeping Microsoft Edge WebDriver safe.
+
+Microsoft Edge WebDriver was started successfully.
+jouluk. 10, 2023 12:52:19 IP. org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C

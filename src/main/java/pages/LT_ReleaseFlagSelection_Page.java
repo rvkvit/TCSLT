@@ -1,5 +1,6 @@
 package pages;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -29,7 +30,7 @@ public class LT_ReleaseFlagSelection_Page extends MasterPage{
 	By ReleaseMotor1_CheckBox = By.xpath(".//div[contains(text(),'RELEASE_MOTOR1')]//ancestor::label[1]//div[2]//div");
 	By Save_Button = By.xpath(".//*[contains(text(),'Save')]");
 	
-	WebDriverWait wait = new WebDriverWait(driver, 10);
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofMinutes(1));
 
 	public LT_ReleaseFlagSelection_Page SelectReleaseFlag() throws InterruptedException{
 

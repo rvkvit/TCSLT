@@ -1,0 +1,22 @@
+1702233494824	geckodriver	INFO	Listening on 127.0.0.1:21268
+1702233495102	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\KRISHRO\\AppData\\Local\\Temp\\rust_mozprofileV37BeZ"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1702233495872	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1702233495986	Marionette	INFO	Listening on port 52676
+Read port: 52676
+1702233496300	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+jouluk. 11, 2023 12:08:17 AP. org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+JavaScript warning: https://assets.adobedtm.com/launch-ENa11e8a47987a44a194153d59bbb6d974-development.min.js, line 7: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://sit-login.lahitapiola.fi."
+1702233505004	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://identify.nordea.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://identify.nordea.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://lahitapiola.sandbox.signicat.com."
+console.error: ({})
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://sit-login.lahitapiola.fi."
+JavaScript warning: https://assets.adobedtm.com/launch-ENa11e8a47987a44a194153d59bbb6d974-development.min.js, line 7: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://assets.adobedtm.com/launch-ENa11e8a47987a44a194153d59bbb6d974-development.min.js, line 7: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1702233525976	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.

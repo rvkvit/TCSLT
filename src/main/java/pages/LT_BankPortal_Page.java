@@ -1,5 +1,6 @@
 package pages;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -28,7 +29,7 @@ public class LT_BankPortal_Page extends MasterPage{
 	 */
 	By Nordea_Link = By.linkText("Nordea");
 
-	WebDriverWait wait = new WebDriverWait(driver, 10);
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofMinutes(1));
 
 	public LT_BankPortal_Page SelectBankPortal() throws InterruptedException{
 
